@@ -1,9 +1,9 @@
-const { network, ethers } = require("hardhat")
+const { ethers } = require("hardhat")
 
 networkConfig = {
     4: {
         name: "rinkeby",
-        vrfCoordinatorV2: "0x6168499c0cffcacd319c818142124b7a15e857ab",
+        vrfCoordinatorV2: "0x6168499c0cFfCaCD319c818142124B7A15E857ab",
         entryFee: ethers.utils.parseEther("0.01"),
         gasLane:
             "0xd89b2bf150e3b9e13446986e571fb9cab24b13cea0a43ea20a6049a85cc807cc", // 30 gwei

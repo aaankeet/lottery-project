@@ -19,7 +19,7 @@ developmentChains.includes(network.name)
               // enter lottery
               const startingTimeStamp = await lottery.getLastTimeStamp()
               const accounts = await ethers.getSigners()
-
+              console.log("Setting Up Listener...")
               await new Promise(async (resolve, reject) => {
                   // setting up the listner
                   // in case the blockchain moves faster
@@ -49,10 +49,11 @@ developmentChains.includes(network.name)
                               startingBalance.add(lotteryEntryFee).toString()
                           )
                           assert(startingTimeStamp < endingTimeStamp)
+
                           resolve()
                       } catch (error) {
                           console.log(error)
-                          reject(e)
+                          reject(error)
                       }
                   })
                   // entering the lottery
