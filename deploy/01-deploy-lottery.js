@@ -51,7 +51,7 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
 
     console.log("lottery address->", lottery.address)
     // Programmatically adding a consumer for the vrfCoordinatorV2Mock
-    if (!developmentChains.includes(network.name)) {
+    if (developmentChains.includes(network.name)) {
         await vrfCoordinatorV2Mock.addConsumer(
             subscriptionId.toNumber(),
             lottery.address
