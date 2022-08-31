@@ -4,7 +4,7 @@ require("hardhat-deploy")
 require("hardhat-gas-reporter")
 require("solidity-coverage")
 require("hardhat-contract-sizer")
-require("dotenv")
+require("dotenv").config()
 
 const RINKEBY_RPC_URL =
     process.env.RINKEBY_RPC_URL ||
@@ -25,7 +25,7 @@ module.exports = {
             url: RINKEBY_RPC_URL,
             chainId: 4,
             blockConfirmations: 6,
-            account: [PRIVATE_KEY],
+            accounts: [PRIVATE_KEY],
             saveDeployments: true,
         },
     },
