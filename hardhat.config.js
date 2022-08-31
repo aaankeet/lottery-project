@@ -4,7 +4,7 @@ require("hardhat-deploy")
 require("hardhat-gas-reporter")
 require("solidity-coverage")
 require("hardhat-contract-sizer")
-require("dotenv")
+require("dotenv").config()
 
 const RINKEBY_RPC_URL =
     process.env.RINKEBY_RPC_URL ||
@@ -25,11 +25,23 @@ module.exports = {
             url: RINKEBY_RPC_URL,
             chainId: 4,
             blockConfirmations: 6,
-            account: [PRIVATE_KEY],
+            accounts: [PRIVATE_KEY],
             saveDeployments: true,
         },
     },
-    solidity: "0.8.9",
+    solidity: {
+        compilers: [
+            {
+                version: "0.8.9",
+            },
+            {
+                version: "0.4.24",
+            },
+        ],
+    },
+    mocha: {
+        timeout: 500000, // 500 seconds max for running tests
+    },
     namedAccounts: {
         deployer: {
             default: 0,
@@ -43,9 +55,6 @@ module.exports = {
         outputFile: "gas-report.txt",
         currency: "USD",
         noColors: true,
-    },
-    mocha: {
-        timeout: 200000, //200 seconds max
     },
     etherscan: {
         apiKey: {
