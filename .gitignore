@@ -1,4 +1,5 @@
 .encryptedKey.json
+.env
 # vscode
 .vscode
 
@@ -12,7 +13,7 @@ coverage.json
 typechain
 
 # don't push the environment vars!
-*.env
+
 
 # Built application files
 .DS*
