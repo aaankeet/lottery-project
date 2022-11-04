@@ -49,14 +49,14 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
         waitConfirmations: network.config.blockConfirmations || 1,
     })
 
-    console.log("lottery address->", lottery.address)
-    // Programmatically adding a consumer for the vrfCoordinatorV2Mock
-    if (developmentChains.includes(network.name)) {
-        await vrfCoordinatorV2Mock.addConsumer(
-            subscriptionId.toNumber(),
-            lottery.address
-        )
-    }
+    // console.log("lottery address->", lottery.address)
+    // // Programmatically adding a consumer for the vrfCoordinatorV2Mock
+    // if (!developmentChains.includes(network.name)) {
+    //     await vrfCoordinatorV2Mock.addConsumer(
+    //         subscriptionId.toNumber(),
+    //         lottery.address
+    //     )
+    // }
 
     // Verifying the deployement
     if (

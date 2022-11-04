@@ -2,7 +2,7 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/root/Lottery-smartcontract/contracts/Lottery.sol": {
-      "lastModificationDate": 1661950404734,
+      "lastModificationDate": 1662119534504,
       "contentHash": "d245ab43b4c229ad64ff9e061aa64852",
       "sourceName": "contracts/Lottery.sol",
       "solcConfig": {

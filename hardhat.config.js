@@ -6,9 +6,9 @@ require("solidity-coverage")
 require("hardhat-contract-sizer")
 require("dotenv").config()
 
-const RINKEBY_RPC_URL =
-    process.env.RINKEBY_RPC_URL ||
-    "https://eth-rinkeby.alchemyapi.io/v2/CP5xHx2Qq96AntyMCXv5eLzQxc5Q4MI0"
+const GOERLI_RPC_URL =
+    process.env.GOERLI_RPC_URL ||
+    "https://old-hardworking-panorama.ethereum-goerli.discover.quiknode.pro/522ad4e9b8430ed85f548898ee366afc4f3287d1/"
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
@@ -21,12 +21,12 @@ module.exports = {
             chainId: 31337,
             blockConfirmations: 1,
         },
-        rinkeby: {
-            url: RINKEBY_RPC_URL,
-            chainId: 4,
+        goerli: {
+            url: GOERLI_RPC_URL, // QUIKCNODE RPC URL
+            chainId: 5,
             blockConfirmations: 6,
             accounts: [PRIVATE_KEY],
-            saveDeployments: true,
+            // saveDeployments: true,
         },
     },
     solidity: {
@@ -35,7 +35,7 @@ module.exports = {
                 version: "0.8.9",
             },
             {
-                version: "0.4.24",
+                version: "0.8.9",
             },
         ],
     },
@@ -58,7 +58,7 @@ module.exports = {
     },
     etherscan: {
         apiKey: {
-            rinkeby: ETHERSCAN_API_KEY,
+            goerli: ETHERSCAN_API_KEY,
         },
     },
 }

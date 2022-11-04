@@ -12,7 +12,7 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
     const args = [BASE_FEE, GAS_PRICE_LINK]
 
     // If we are on a local development network, we need to deploy mocks!
-    if (developmentChains.includes(network.name)) {
+    if (chainId == 31337) {
         log("Local Network Detected! Deploying Mocks...")
 
         // Deploying vrfCoordinator
